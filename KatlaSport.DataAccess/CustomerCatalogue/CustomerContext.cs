@@ -4,7 +4,8 @@
     {
         public CustomerContext(ApplicationDbContext dbContext)
             : base(dbContext)
-        {}
+        {
+        }
 
         public IEntitySet<Customer> Customers => GetDbSet<Customer>();
     }
