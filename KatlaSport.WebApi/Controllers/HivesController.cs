@@ -46,7 +46,7 @@ namespace KatlaSport.WebApi.Controllers
         }
 
         [HttpPut]
-        [Route("{id:int:min(1)}")]
+        [Route("{hiveId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Updates an existed hive.")]
         [SwaggerResponse(HttpStatusCode.BadRequest, Description = "Incorrect request.")]
         [SwaggerResponse(HttpStatusCode.Conflict, Description = "Conflict happened.")]
@@ -64,15 +64,15 @@ namespace KatlaSport.WebApi.Controllers
         }
 
         [HttpDelete]
-        [Route("{id:int:min(1)}")]
+        [Route("{hiveId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Deletes an existed product.")]
         [SwaggerResponse(HttpStatusCode.BadRequest, Description = "Incorrect request.")]
         [SwaggerResponse(HttpStatusCode.Conflict, Description = "Conflict happened.")]
         [SwaggerResponse(HttpStatusCode.NotFound, Description = "Such resource doesn't exist on the server.")]
         [SwaggerResponse(HttpStatusCode.InternalServerError, Description = "Internal server error happened.")]
-        public async Task<IHttpActionResult> DeleteHive([FromUri] int id)
+        public async Task<IHttpActionResult> DeleteHiveAsync([FromUri] int hiveId)
         {
-            await _hiveService.DeleteHiveAsync(id);
+            await _hiveService.DeleteHiveAsync(hiveId);
             return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
 
