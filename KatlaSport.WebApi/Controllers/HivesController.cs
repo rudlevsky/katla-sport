@@ -33,7 +33,7 @@ namespace KatlaSport.WebApi.Controllers
         [SwaggerResponse(HttpStatusCode.BadRequest, Description = "Incorrect request.")]
         [SwaggerResponse(HttpStatusCode.Conflict, Description = "Conflict happened.")]
         [SwaggerResponse(HttpStatusCode.InternalServerError, Description = "Internal server error happened.")]
-        public async Task<IHttpActionResult> AddHive([FromBody] UpdateHiveRequest addRequest)
+        public async Task<IHttpActionResult> AddHiveAsync([FromBody] UpdateHiveRequest addRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace KatlaSport.WebApi.Controllers
         [SwaggerResponse(HttpStatusCode.Conflict, Description = "Conflict happened.")]
         [SwaggerResponse(HttpStatusCode.NotFound, Description = "Such resource doesn't exist on the server.")]
         [SwaggerResponse(HttpStatusCode.InternalServerError, Description = "Internal server error happened.")]
-        public async Task<IHttpActionResult> UpdateHive([FromUri] int hiveId, [FromBody] UpdateHiveRequest updateRequest)
+        public async Task<IHttpActionResult> UpdateHiveAsync([FromUri] int hiveId, [FromBody] UpdateHiveRequest updateRequest)
         {
             if (!ModelState.IsValid)
             {
