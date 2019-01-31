@@ -24,10 +24,7 @@ namespace KatlaSport.DataAccess.ProductCatalogue
         /// </summary>
         public string Code { get; set; }
 
-        /// <summary>
-        /// Gets or sets a product category description.
-        /// </summary>
-        public string Description { get; set; }
+        // TODO STEP 1 - Add "Description" property here.
 
         /// <summary>
         /// Gets or sets a value indicating whether a product category is deleted.
