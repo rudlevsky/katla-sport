@@ -25,4 +25,8 @@ export class ProductCategoryProductListComponent implements OnInit {
       this.productService.getCategoryProducts(p['id']).subscribe(p => this.products = p);
     });
   }
+
+  onOrder(orderCount: number, productId: number) {
+    this.router.navigate([`orders/${this.categoryId}/${productId}/${orderCount}`]);
+  }
 }

@@ -68,11 +68,11 @@ namespace KatlaSport.Services.ProductManagement
         /// <inheritdoc/>
         public async Task<Product> CreateProductAsync(UpdateProductRequest createRequest)
         {
-            var dbProducts = await _context.Products.Where(p => p.Code == createRequest.Code).ToArrayAsync();
+            /*var dbProducts = await _context.Products.Where(p => p.Code == createRequest.Code).ToArrayAsync();
             if (dbProducts.Length > 0)
             {
                 throw new RequestedResourceHasConflictException("code");
-            }
+            }*/
 
             var dbProduct = Mapper.Map<UpdateProductRequest, DbProduct>(createRequest);
             dbProduct.CreatedBy = _userContext.UserId;

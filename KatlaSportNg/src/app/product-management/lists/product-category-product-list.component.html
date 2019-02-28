@@ -19,8 +19,14 @@
             <div class="btn-group mr-1" role="group" aria-label="Delete product" *ngIf="product.isDeleted">
               <button type="button" class="btn btn-danger">Deleted</button>
             </div>
-            <div class="btn-group" role="group" aria-label="Edit product">
+            <div class="btn-group place" role="group" aria-label="Edit product">
               <button routerLink="/category/{{this.categoryId}}/product/{{product.id}}" type="button" class="btn btn-primary">Edit</button>
+            </div>
+            <div style="padding-left: 5%;" class="btn-group place" role="group" aria-label="Order product">
+              <button (click)="onOrder(orderCount.value, product.id)" type="button" class="btn btn-primary">Order product</button>
+            </div>
+            <div style="padding-left: 5%;" class="btn-group place" role="group" aria-label="Enter amount">
+              <input #orderCount type="text" class="form-control" id="textCode" aria-describedby="textCodeLabel" placeholder="product's amount" minlength="1" maxlength="5" required pattern="^[ 0-9]+$">
             </div>
           </span>
         </td>

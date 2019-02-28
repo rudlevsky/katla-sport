@@ -64,10 +64,10 @@ namespace KatlaSport.WebApi.Controllers
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
         public async Task<IHttpActionResult> AddProduct([FromBody] UpdateProductRequest createRequest)
         {
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
+            }*/
 
             var product = await _productService.CreateProductAsync(createRequest);
             var location = string.Format("/api/products/{0}", product.Id);

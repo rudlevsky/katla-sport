@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Product List</h2>
+  <h2>Product List </h2>
   <table class="table table-nofluid">
     <thead>
       <th scope="col">#</th>
@@ -16,7 +16,7 @@
         <td>{{product.name}}</td>
         <td>{{product.categoryCode}}</td>
         <td>{{product.lastUpdated}}</td>
-        <td>
+        <!--<td>
           <div class="btn-toolbar" role="toolbar" aria-label="Product action buttons">
             <div class="btn-group mr-1" role="group" aria-label="Delete group" *ngIf="product.isDeleted">
               <button type="button" class="btn btn-warning">Deleted</button>
@@ -28,7 +28,7 @@
               <button routerLink="/product/{{product.id}}" type="button" class="btn btn-primary">Edit</button>
             </div>
           </div>
-        </td>
+        </td>-->
       </tr>
     </tbody>
   </table>
